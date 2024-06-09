@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_REGISTRY = 'docker.io/mohamedemam2020'
+        DOCKER_REGISTRY = 'docker.io/omarshaban32'
         DOCKER_IMAGE = 'spring-boot-app'
         OPENSHIFT_PROJECT = 'nti'
         OPENSHIFT_SERVER = 'https://api.ocpuat.devopsconsulting.org:6443'
@@ -15,7 +15,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 script {
-                    git branch: 'main', url: 'https://github.com/EngMohamedElEmam/spring-boot-app'
+                    git branch: 'main', url: 'https://github.com/omarshaban32/spring-boot-app'
                 }
             }
         }
