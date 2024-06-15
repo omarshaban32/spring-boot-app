@@ -44,7 +44,7 @@ pipeline {
         stage('Build and push Docker Image') {
             steps {
                 script {
-                    buildpushDockerImage(DockerHubCredentialsID, DOCKER_IMAGE) 
+                    buildpushDockerImage("${DockerHubCredentialsID}", "${DOCKER_IMAGE}") 
                 }
             }
         }
@@ -53,7 +53,7 @@ pipeline {
         stage('edit Docker Image') {
             steps {
                 script {
-                    editNewImage(DOCKER_IMAGE)
+                    editNewImage("${DOCKER_IMAGE}")
                 }
             }
         }
@@ -63,7 +63,7 @@ pipeline {
         stage('Deploy to OpenShift') {
             steps {
                 script {
-                deployOnOc(OpenshiftCredentialsID, nameSpace, OPENSHIFT_SERVER) 
+                deployOnOc("${OpenshiftCredentialsID}", "${nameSpace}", "${OPENSHIFT_SERVER}") 
                 }
             }
         }
