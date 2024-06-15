@@ -49,6 +49,15 @@ pipeline {
             }
         }
 
+        
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    editNewImage(DOCKER_IMAGE)
+                }
+            }
+        }
+
 
 
         stage('Deploy to OpenShift') {
