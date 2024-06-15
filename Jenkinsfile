@@ -41,7 +41,7 @@ pipeline {
 
 
 
-        stage('Build Docker Image') {
+        stage('Build and push Docker Image') {
             steps {
                 script {
                     buildpushDockerImage(DockerHubCredentialsID, DOCKER_IMAGE) 
@@ -50,7 +50,7 @@ pipeline {
         }
 
         
-        stage('Build Docker Image') {
+        stage('edit Docker Image') {
             steps {
                 script {
                     editNewImage(DOCKER_IMAGE)
