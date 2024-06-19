@@ -10,7 +10,7 @@ pipeline {
         OpenshiftCredentialsID = 'openshift-token-credentials-id'
         OPENSHIFT_PROJECT = 'nti'
         OPENSHIFT_SERVER = 'https://api.ocp-training.ivolve-test.com:6443'
-        nameSpace = 'omarshabaan'
+        nameSpace = 'ahlamahmed'
     }
 
     stages {
