@@ -63,7 +63,9 @@ pipeline {
         stage('Deploy to OpenShift') {
             steps {
                 script {
-                deployOnOc("${OpenshiftCredentialsID}", "${nameSpace}", "${OPENSHIFT_SERVER}") 
+                    dir('oc') {
+                        deployOnOc("${OpenshiftCredentialsID}", "${nameSpace}", "${OPENSHIFT_SERVER}") 
+                    }
                 }
             }
         }
